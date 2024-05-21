@@ -26,8 +26,8 @@ transform = transforms.Compose([
 # root/
 #   |- correct/
 #   |- incorrect/
-train_dataset = datasets.ImageFolder(root='C:/Users/Incase/Documents/Inception_pen_1/train', transform=transform)
-test_dataset = datasets.ImageFolder(root='C:/Users/Incase/Documents/Inception_pen_1/test', transform=transform)
+train_dataset = datasets.ImageFolder(root='/train', transform=transform)
+test_dataset = datasets.ImageFolder(root='/test', transform=transform)
 
 # Create data loaders
 batch_size = 8
@@ -77,7 +77,7 @@ for epoch in range(num_epochs):
 
     print(f"Epoch {epoch+1}/{num_epochs}, Loss: {running_loss/len(train_loader)}")
 
-torch.save(model.state_dict(), 'C:/Users/Incase/Downloads/ultralytics-main/pen_inception_1.pth')   
+torch.save(model.state_dict(), '/inception_1.pth')   
 model.eval()
 correct, total = 0, 0
 
@@ -95,7 +95,7 @@ print(f"Test Accuracy: {accuracy}")
 ########## prediction on new image ##############
 
 # Load the trained model
-model_path = 'C:/Users/Incase/Downloads/ultralytics-main/pen_inception_2.pth'
+model_path = '/inception.pth'
 model = torch.load(model_path)  # Note: Use torch.load() for models saved with torch.save()
 
 # Set the model to evaluation mode
