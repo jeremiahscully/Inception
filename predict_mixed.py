@@ -42,7 +42,7 @@ num_classes = 2
 model = CustomInception(num_classes).to(device)
 
 # Load the trained model state_dict
-model.load_state_dict(torch.load('C:/Users/Incase/Downloads/ultralytics-main/pen_inception_2.pth', map_location=device))
+model.load_state_dict(torch.load('/inception.pth', map_location=device))
 
 # Set the model to evaluation mode
 model.eval()
@@ -51,7 +51,7 @@ total_samples = 0
 correct_predictions = 0
 wrong_predictions = 0
 # Folder containing mixed images
-mixed_folder = 'C:/Users/Incase/Documents/Inception_pen_1/mixed/'
+mixed_folder = '/mixed/'
 
 # Iterate through the images in the folder
 for filename in os.listdir(mixed_folder):
