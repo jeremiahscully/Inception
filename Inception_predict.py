@@ -32,7 +32,7 @@ num_classes = 2
 model = CustomInception(num_classes).to(device)
 
 # Load the trained model state_dict
-model.load_state_dict(torch.load('C:/Users/Incase/Downloads/ultralytics-main/pen_inception_1.pth', map_location=device))
+model.load_state_dict(torch.load('inception.pth', map_location=device))
 
 # Set the model to evaluation mode
 model.eval()
@@ -44,7 +44,7 @@ transform = transforms.Compose([
 ])
 
 # Folder containing images for prediction
-input_folder = 'C:/Users/Incase/Documents/Inception_pen_1/test/'
+input_folder = '/test/'
 
 # Lists to store ground truth and predicted labels
 true_labels = []
