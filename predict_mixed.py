@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Sep 28 13:55:31 2023
-
-@author: Incase
-"""
-
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
